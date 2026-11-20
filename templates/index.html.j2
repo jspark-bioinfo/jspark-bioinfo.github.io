@@ -221,7 +221,6 @@ footer{color:var(--muted);font-size:13px;padding-top:24px;border-top:1px solid v
 </section>
 <section id="supervision">
   <h2>Supervision</h2>
-  <p style="margin:0 0 4px">{{ cv.supervision.overview }}</p>
   <h3>Co-supervised PhD students</h3>
   {% for s in cv.supervision.phd %}
   <div class="item"><div class="when">{{ s.years }}</div><div><div class="t">{{ s.name }} <span style="font-weight:400" class="s">· {{ s.institution }}</span></div><div class="s">{{ s.topic }}</div></div></div>
@@ -231,10 +230,10 @@ footer{color:var(--muted);font-size:13px;padding-top:24px;border-top:1px solid v
   <div class="item"><div class="when">{{ s.years }}</div><div><div class="t">{{ s.name }} <span style="font-weight:400" class="s">· {{ s.institution }}</span>{% if s.note %}<span class="tag">{{ s.note }}</span>{% endif %}</div><div class="s">{{ s.topic }}</div></div></div>
   {% endfor %}
   <h3>Undergraduate interns (selected)</h3>
-  <p class="s" style="color:var(--muted);font-size:14.5px;margin:0 0 4px">Common project: <em>{{ cv.supervision.interns.common_topic }}</em></p>
   {% for s in cv.supervision.interns.list %}
-  <div class="item"><div class="when">{{ s.years }}</div><div><div class="t">{{ s.name }} <span style="font-weight:400" class="s">· {{ s.institution }} · {{ s.topic }}</span>{% if s.note %}<span class="tag">{{ s.note }}</span>{% endif %}</div></div></div>
+  <div class="item"><div class="when">{{ s.years }}</div><div><div class="t">{{ s.name }}{% if s.note %}*{% endif %} <span style="font-weight:400" class="s">· {{ s.institution }} · {{ s.topic }}</span></div></div></div>
   {% endfor %}
+  {% for s in cv.supervision.interns.list if s.note %}<p style="color:var(--muted);font-size:13.5px;margin:8px 0 0">* {{ s.note }}</p>{% endfor %}
 </section>
 <section id="talks">
   <h2>Invited Talks</h2>
