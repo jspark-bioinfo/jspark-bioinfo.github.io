@@ -106,10 +106,6 @@
   {{ p.authors|authors }} ({{ p.year }}). {{ p.number|t }} ({{ p.status|lower }}).
 ]
 {% endfor %}
-#sub[Software]
-{% for s in cv.software %}
-#pub({{ loop.index }})[#strong[{{ s.name|t }}] — {{ s.description|t }} #link("{{ s.url }}")[{{ s.url|replace("https://","")|t }}]]
-{% endfor %}
 
 #section("Research Projects and Funding")
 {% for f in cv.funding %}

@@ -153,7 +153,6 @@ footer{color:var(--muted);font-size:13px;padding-top:24px;border-top:1px solid v
     <button data-f="journal">Journal articles</button>
     <button data-f="conference">Conference</button>
     <button data-f="patent">Patents</button>
-    <button data-f="software">Software</button>
   </div>
   <ul class="pubs">
     {% for p in cv.publications.journal %}
@@ -177,12 +176,6 @@ footer{color:var(--muted);font-size:13px;padding-top:24px;border-top:1px solid v
       <span class="pt">{{ p.title }}</span>
       <span class="pa">{{ p.authors|authors }}</span><br>
       <span class="pv">{{ p.number }}</span><span class="tag">{{ p.status|lower }} patent</span>
-    </li>
-    {% endfor %}
-    {% for w in cv.software %}
-    <li data-k="software"><span class="y">code</span>
-      <span class="pt"><a href="{{ w.url }}" target="_blank" rel="noopener">{{ w.name }}</a></span>
-      <span class="pa">{{ w.description }}</span>
     </li>
     {% endfor %}
   </ul>

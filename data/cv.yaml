@@ -23,10 +23,13 @@ profile: >-
   I develop computational methods for biology rather than only applying them.
   My work starts from a simple premise: disease arises from perturbations that
   spread through molecular networks, and the algorithms we use to trace that
-  spread determine what we can discover. Over the past decade I have built such
-  tools, including LAPINE, a network-embedding framework that predicts adverse
-  drug reaction-related proteins across the human interactome, and a patented
-  system for multi-scale visualisation of biological networks.
+  spread determine what we can discover. This is why most of my publications
+  introduce new methods: network-distance measures for predicting drug
+  combinations; a multi-scale network visualisation system that became a
+  registered patent; LAPINE, a network-embedding framework that predicts adverse
+  drug reaction-related proteins across the human interactome; and a
+  machine-learning framework that isolates the maternal T-cell signatures of
+  repeated pregnancy loss.
 
 profile2: >-
   I now work on bringing quantum algorithms to network biology. Biological
@@ -246,14 +249,6 @@ affiliations:
     name: Cambridge Centre for AI in Medicine (CCAIM)
     description: Brings together researchers in machine learning, biomedical science and medicine to pioneer AI technologies through interdisciplinary collaboration.
     role: Affiliated Postdoc
-
-software:
-  - name: LAPINE
-    description: Large-scale prediction of adverse drug reaction-related proteins with network embedding.
-    url: "https://github.com/rupinas/LAPINE"
-  - name: QuantumWalk-LongCovid
-    description: Quantum walk-based network analysis of SARS-CoV-2-induced protein networks (lab repository).
-    url: "https://github.com/Namshik-Han-Lab/QuantumWalk-LongCovid"
 
 awards:
   - { years: "2008", name: National Science and Technology Scholarship }
