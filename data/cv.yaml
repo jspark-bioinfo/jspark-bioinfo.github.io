@@ -16,24 +16,36 @@ links:
   - { label: GitHub, url: "https://github.com/jspark-bioinfo" }
 
 tagline: >-
-  Computational biologist building network, machine-learning and quantum-walk
-  methods to uncover disease mechanisms and therapeutic targets.
+  I develop network and quantum algorithms for biology, and use them to uncover
+  disease mechanisms and therapeutic targets.
 
 profile: >-
-  I am a computational biologist who develops network-based methods to uncover
-  disease mechanisms and therapeutic targets. My work spans graph embedding,
-  diffusion and pathway-based analysis of heterogeneous biological networks,
-  machine learning for biomedical data and, most recently, quantum walk-based
-  network algorithms. At the Cambridge Stem Cell Institute I lead the
-  computational analysis of multi-omics data from patient-derived intestinal
-  organoids, from preprocessing and integration to the infrastructure that keeps
-  the datasets reusable. I have coordinated work within a ten-year national
-  research consortium and currently co-supervise three PhD students.
+  I develop computational methods for biology rather than only applying them.
+  My work starts from a simple premise: disease arises from perturbations that
+  spread through molecular networks, and the algorithms we use to trace that
+  spread determine what we can discover. Over the past decade I have built such
+  tools, including LAPINE, a network-embedding framework that predicts adverse
+  drug reaction-related proteins across the human interactome, and a patented
+  system for multi-scale visualisation of biological networks.
+
+profile2: >-
+  I now work on bringing quantum algorithms to network biology. Biological
+  networks are large, sparse and highly structured, which makes them a natural
+  testbed for quantum approaches to propagation, search and optimisation that
+  classical methods handle poorly. My first results use quantum walks, which
+  exploit interference to reach regions of a network that classical random walks
+  rarely explore: they uncovered mitochondrial and thromboinflammatory mechanisms
+  in Long COVID, and led to exact theoretical results on quantum–classical hybrid
+  walks. At the Cambridge Stem Cell Institute I validate these methods against
+  multi-omics data from patient-derived intestinal organoids in Crohn's disease,
+  and I am extending them to brain networks and immunotherapy target discovery.
 
 research_fields:
-  - Computational Biology, Bioinformatics, Systems Biology
-  - Drug Development, Biomarker Discovery, Disease Mechanism Analysis
-  - Quantum Algorithms, Network Analysis, Machine Learning, Multi-omics
+  - Network Biology
+  - Quantum Algorithms
+  - Method Development
+  - Multi-omics Integration
+  - Drug Target Discovery
 
 # Short items shown at the top of the homepage. Newest first.
 news:
@@ -72,7 +84,7 @@ experience:
     supervisor: Prof. Matthias Zilbauer / Prof. Namshik Han
     bullets:
       - "Disease epigenetics (Zilbauer): led the computational analysis on the Helmsley-funded study of epigenetic regulation in Crohn's disease, integrating DNA methylation and transcriptomic data from patient-derived intestinal organoids"
-      - "Quantum-inspired network methods (Han): development of quantum walk-based network algorithms for biomedical applications"
+      - "Quantum algorithms for network biology (Han): developing quantum walk-based and quantum-inspired algorithms for disease mechanism and target discovery"
   - years: "2023"
     role: Postdoctoral Researcher
     org: Department of Bio and Brain Engineering, KAIST
@@ -158,7 +170,7 @@ publications:
       doi: 10.1371/journal.pcbi.1014806
       cofirst: true
       selected: true
-    - title: Universal scaling and protocol-dependent amplitude in hybrid quantum walks
+    - title: Exact diffusion coefficients for quantum–classical hybrid walks
       authors: "CH Kim, J Park*, N Han"
       venue: arXiv preprint (under review)
       year: 2026

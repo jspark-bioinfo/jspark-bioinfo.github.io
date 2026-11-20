@@ -129,7 +129,8 @@ footer{color:var(--muted);font-size:13px;padding-top:24px;border-top:1px solid v
 <section id="about" class="about">
   <p class="lead">{{ cv.tagline }}</p>
   <p>{{ cv.profile }}</p>
-  <div class="chips">{% for f in cv.research_fields %}{% for k in f.split(", ") %}<span class="chip">{{ k }}</span>{% endfor %}{% endfor %}</div>
+  <p>{{ cv.profile2 }}</p>
+  <div class="chips">{% for f in cv.research_fields %}<span class="chip">{{ f }}</span>{% endfor %}</div>
   <div class="stats">
     <div class="stat"><b>{{ cv.publications.journal|length }}</b><span>Journal articles</span></div>
     <div class="stat"><b>{{ n_first }}</b><span>First / co-first</span></div>

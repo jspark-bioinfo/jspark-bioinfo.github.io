@@ -53,6 +53,8 @@
 
 #section("Profile")
 #par(justify: true)[{{ cv.profile|t }}]
+#v(0.25em)
+#par(justify: true)[{{ cv.profile2|t }}]
 
 #v(0.3em)
 #note[*Research areas:* {{ cv.research_fields|map("t")|join(" · ") }}]
@@ -143,19 +145,9 @@
 ]
 {% endfor %}
 
-#section("Academic Service")
-{% for s in cv.service %}
-#entry("{{ s.years }}")[
-  #strong[{{ s.name|t }}] — {{ s.role|t }} \
-  #note[{{ s.description|t }}]
-]
-{% endfor %}
-
-#section("Affiliations")
-{% for s in cv.affiliations %}
-#entry("{{ s.years }}")[
-  #strong[{{ s.name|t }}] — {{ s.role|t }}
-]
+#section("Academic Service and Affiliations")
+{% for s in cv.service + cv.affiliations %}
+#entry("{{ s.years }}")[#strong[{{ s.name|t }}] — {{ s.role|t }}]
 {% endfor %}
 
 #section("Awards and Languages")
