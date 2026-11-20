@@ -19,18 +19,15 @@ tagline: >-
   methods to uncover disease mechanisms and therapeutic targets.
 
 profile: >-
-  I am a computational biologist working on the discovery of disease mechanisms
-  and therapeutic targets by applying and developing state-of-the-art
-  computational methods. That work spans graph embedding, diffusion algorithms
-  and pathway-based approaches over heterogeneous biological networks, together
-  with machine learning and AI methods for biomedical data, extending most
-  recently into quantum and quantum-inspired network analysis. I work with
-  multi-omics data from patient-derived organoids, taking responsibility for
-  preprocessing, standardisation and integration alongside the analytical
-  infrastructure that keeps those datasets reusable. Research-active since 2012
-  across Korean and UK institutions, I bring hands-on operational experience of
-  large multi-institution research consortia and an active role in supervising
-  and developing early-career researchers.
+  I am a computational biologist who develops network-based methods to uncover
+  disease mechanisms and therapeutic targets. My work spans graph embedding,
+  diffusion and pathway-based analysis of heterogeneous biological networks,
+  machine learning for biomedical data and, most recently, quantum walk-based
+  network algorithms. At the Cambridge Stem Cell Institute I lead the
+  computational analysis of multi-omics data from patient-derived intestinal
+  organoids, from preprocessing and integration to the infrastructure that keeps
+  the datasets reusable. I have coordinated work within a ten-year national
+  research consortium and currently co-supervise three PhD students.
 
 research_fields:
   - Computational Biology, Bioinformatics, Systems Biology
@@ -50,14 +47,22 @@ education:
     institution: KAIST, Daejeon, Republic of Korea
     thesis: Prediction of Adverse Drug Reaction-Related Proteins Using Large-Scale Biological Network Embedding
     advisor: Prof. Doheon Lee
+    bullets:
+      - "Developed LAPINE, a network-embedding method for large-scale prediction of ADR-related proteins (Bioinformatics, 2023)"
+      - Built a system to analyse and visualise large-scale bio-network simulation data
   - years: 2013 – 2015
     degree: M.S. in Bio and Brain Engineering
     institution: KAIST, Daejeon, Republic of Korea
     thesis: Design of a multi-scale whole body visualization system
-    advisor: Prof. Kwang Hyung Lee
+    advisor: Prof. Kwang Hyung Lee and Prof. Doheon Lee
+    bullets:
+      - "Zoomable visualisation of large-scale biological networks, leading to a registered Korean patent (2018)"
+      - Built ontologies for context-specific biological knowledge representation
   - years: 2008 – 2013
     degree: B.S. in Biological Sciences and Bio and Brain Engineering (double major)
     institution: KAIST, Daejeon, Republic of Korea
+    bullets:
+      - "Undergraduate research (2012, Prof. Doheon Lee): drug-combination prediction from protein-protein interaction networks (Interdisciplinary Bio Central, 2013)"
 
 experience:
   - years: 2024 – present
@@ -69,34 +74,14 @@ experience:
       - "Quantum-inspired network methods (Han): development of quantum walk-based network algorithms for biomedical applications"
   - years: "2023"
     role: Postdoctoral Researcher
-    org: KAIST
+    org: Department of Bio and Brain Engineering, KAIST
     supervisor: Prof. Doheon Lee
     bullets:
       - Identification of biomarkers for neurodegenerative brain disease
-  - years: 2015 – 2023
-    role: PhD Researcher
-    org: KAIST
-    supervisor: Prof. Doheon Lee
-    bullets:
-      - Identification of target proteins related to adverse drug reactions (thesis)
-      - Development of a system that analyses and visualises large-scale bio-network simulation data
-  - years: 2013 – 2015
-    role: MS Researcher
-    org: KAIST
-    supervisor: Prof. Kwang Hyung Lee and Prof. Doheon Lee
-    bullets:
-      - Effective visualisation of large-scale biological networks (thesis)
-      - Construction of ontologies for context-specific biological knowledge representation
-  - years: "2012"
-    role: Undergraduate Research Assistant
-    org: KAIST
-    supervisor: Prof. Doheon Lee
-    bullets:
-      - Prediction of drug combinations based on protein-protein interaction networks
 
 funding:
   - years: 2026 – present
-    name: Basic Science Research Program, National Research Foundation of Korea
+    name: Basic Science Research Program, National Research Foundation of Korea (NRF)
     description: Discovering the impact of repeated stress and sleep imbalance on brain network reorganisation in young adults. Funded by the Ministry of Science and ICT, Republic of Korea.
     role: Computational lead
     bullets:
@@ -121,9 +106,8 @@ funding:
     description: Development of Bio-IT convergence technologies for elucidating the mechanisms of action of traditional natural products. Funded by the Ministry of Science and ICT, Republic of Korea. Ten-year national consortium with 20 laboratories across five thematic work packages.
     role: Working-level coordinator for the computational modelling work package (five laboratories)
     bullets:
-      - "Research reporting: consolidated the scientific output of the five laboratories into the programme's annual reports to the NRF; produced outcome presentation material; attended internal review meetings each cycle; contributed to the final closing report"
-      - "Budget reporting: compiled each laboratory's spending summary into the annual return, which under Korean funding rules accounts for expenditure alongside research activity"
-      - "Funder liaison: corresponded with the NRF programme officer on procedural questions and submission scheduling; prepared supplementary material required after each annual assessment"
+      - "Reporting: consolidated the scientific output and spending summaries of five laboratories into the programme's annual reports and returns to the NRF; contributed to the final closing report"
+      - "Funder liaison: point of contact with the NRF programme officer; prepared outcome presentations and supplementary material for each annual assessment"
 
 supervision:
   overview: Co-supervised 3 doctoral students, supervised 3 master's students and over 10 undergraduate interns.
@@ -153,17 +137,24 @@ publications:
       authors: "E Slater, J Park*, T Dennison, …, K Nayak, M Zilbauer"
       venue: Clinical Nutrition
       year: 2026
+      details: "57:106557"
+      doi: 10.1016/j.clnu.2025.106557
       cofirst: true
       selected: true
     - title: Advancing Understanding of Long COVID Pathophysiology Through Quantum Walk-Based Network Analysis
       authors: "J Park, W Hwang, S Lee, H Lee, M MacMahon, M Zilbauer, N Han"
       venue: Bioinformatics Advances
       year: 2026
+      details: "6(1):vbag050"
+      doi: 10.1093/bioadv/vbag050
+      code: "https://github.com/Namshik-Han-Lab/QuantumWalk-LongCovid"
       selected: true
     - title: Machine learning–driven decoding of maternal immune signatures in repeated pregnancy loss
       authors: "TL Ko, J Park*, D Leem, J Kim, J Han, JS Park, SK Lee, H Paik"
       venue: PLOS Computational Biology
       year: 2026
+      details: "22(9):e1014806"
+      doi: 10.1371/journal.pcbi.1014806
       cofirst: true
       selected: true
     - title: Universal scaling and protocol-dependent amplitude in hybrid quantum walks
@@ -178,15 +169,24 @@ publications:
       authors: "S Lee, J Park, H-C Lee, X Xu, E Slater, M Gasparetto, N Han, M Zilbauer"
       venue: Journal of Crohn's and Colitis
       year: 2026
+      details: "20(5)"
+      doi: 10.1093/ecco-jcc/jjag022
+      type: review
     - title: Large-scale prediction of adverse drug reactions-related proteins with network embedding
       authors: "J Park, S Lee, K Kim, J Jung, D Lee"
       venue: Bioinformatics
       year: 2023
+      details: "39(1):btac843"
+      doi: 10.1093/bioinformatics/btac843
+      code: "https://github.com/rupinas/LAPINE"
       selected: true
     - title: Community assessment to advance computational prediction of cancer drug combinations in a pharmacogenomic screen
       authors: "M Menden, D Wang, …, AstraZeneca-Sanger Drug Combination DREAM Consortium, …, J Dry, J Saez-Rodriguez"
       venue: Nature Communications
       year: 2019
+      details: "10:2674"
+      doi: 10.1038/s41467-019-09799-2
+      note: Contributed as a member of the AstraZeneca-Sanger Drug Combination DREAM Consortium.
     - title: Systematic approach for analyzing drug combination by using target-enzyme distance
       authors: "J Park, S Lee, K Kim, D Lee"
       venue: Interdisciplinary Bio Central
@@ -233,6 +233,14 @@ affiliations:
     name: Cambridge Centre for AI in Medicine (CCAIM)
     description: Brings together researchers in machine learning, biomedical science and medicine to pioneer AI technologies through interdisciplinary collaboration.
     role: Affiliated Postdoc
+
+software:
+  - name: LAPINE
+    description: Large-scale prediction of adverse drug reaction-related proteins with network embedding.
+    url: "https://github.com/rupinas/LAPINE"
+  - name: QuantumWalk-LongCovid
+    description: Quantum walk-based network analysis of SARS-CoV-2-induced protein networks (lab repository).
+    url: "https://github.com/Namshik-Han-Lab/QuantumWalk-LongCovid"
 
 awards:
   - { years: "2008", name: National Science and Technology Scholarship }

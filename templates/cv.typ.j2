@@ -7,12 +7,12 @@
   margin: (x: 2cm, top: 1.8cm, bottom: 1.8cm),
   footer: context [
     #set text(8pt, fill: muted)
-    {{ cv.name|t }} — {% if variant == "pubs" %}Publications{% else %}Curriculum Vitae{% endif %}
+    {{ cv.name|t }} — Curriculum Vitae
     #h(1fr) Updated {{ updated|t }}
     #h(1fr) #counter(page).display("1 / 1", both: true)
   ],
 )
-#set text(font: ("Libertinus Serif", "New Computer Modern"), size: 10.2pt, lang: "en", region: "gb")
+#set text(font: ("Libertinus Serif", "New Computer Modern"), size: 10pt, lang: "en", region: "gb")
 #set par(justify: false, leading: 0.58em, spacing: 0.75em)
 #show link: set text(fill: accent)
 
@@ -25,7 +25,7 @@
   ]
 }
 #let sub(title) = block(above: 0.8em, below: 0.45em, sticky: true, text(weight: "bold", size: 10.4pt, title))
-#let entry(date, body) = block(breakable: true, above: 0.62em, below: 0.62em, grid(
+#let entry(date, body) = block(breakable: true, above: 0.55em, below: 0.55em, grid(
   columns: (2.55cm, 1fr), column-gutter: 0.4cm,
   text(fill: muted, size: 9.4pt, date), body,
 ))
@@ -51,26 +51,20 @@
 #v(0.2em)
 #line(length: 100%, stroke: 1.2pt + accent)
 
-{% macro journal_list(items) %}
-{% for p in items %}
-#pub({{ loop.index }})[
-  #strong[{{ p.title|t }}] \
-  {{ p.authors|authors }} ({{ p.year }}). #emph[{{ p.venue|t }}].{% if p.url %} #link("{{ p.url }}")[{{ p.url|t }}]{% endif %}
-
-  {% if p.cofirst %}#note[\* co-first author]{% endif %}
-
-]
-{% endfor %}
-{% endmacro %}
-
-{% if variant != "pubs" %}
-// ───────────── Profile ─────────────
 #section("Profile")
-#par(justify: true)[{% if variant == "full" %}{{ cv.profile|t }}{% else %}{{ cv.tagline|t }}{% endif %}]
-
+#par(justify: true)[{{ cv.profile|t }}]
 
 #v(0.3em)
 #note[*Research areas:* {{ cv.research_fields|map("t")|join(" · ") }}]
+
+#section("Employment")
+{% for x in cv.experience %}
+#entry("{{ x.years }}")[
+  #strong[{{ x.role|t }}], {{ x.org|t }} \
+  #note[Supervisor: {{ x.supervisor|t }}]
+  #bullets({% for b in x.bullets %}[{{ b|t }}],{% endfor %})
+]
+{% endfor %}
 
 #section("Education")
 {% for e in cv.education %}
@@ -78,34 +72,53 @@
   #strong[{{ e.degree|t }}], {{ e.institution|t }}
   {% if e.thesis %}\ #note[Thesis: #emph[{{ e.thesis|t }}]{% if e.advisor %} · Advisor: {{ e.advisor|t }}{% endif %}]{% endif %}
 
+  {% if e.bullets %}#bullets({% for b in e.bullets %}[{{ b|t }}],{% endfor %}){% endif %}
+
 ]
 {% endfor %}
 
-#section("Academic Experience")
-{% for x in (cv.experience if variant == "full" else cv.experience[:3]) %}
-#entry("{{ x.years }}")[
-  #strong[{{ x.role|t }}], {{ x.org|t }} \
-  #note[Supervisor: {{ x.supervisor|t }}]
-  {% if variant == "full" or loop.first %}
-  #bullets({% for b in x.bullets %}[{{ b|t }}],{% endfor %})
-  {% endif %}
+#section("Publications")
+#note[#strong[J Park] = this author · \* co-first author]
+#sub[Journal articles]
+{% for p in cv.publications.journal %}
+#pub({{ loop.index }})[
+  #strong[{{ p.title|t }}] \
+  {{ p.authors|authors }} ({{ p.year }}). #emph[{{ p.venue|t }}]{% if p.details %} {{ p.details|t }}{% endif %}.{% if p.type == "review" %} (Review){% endif %}
+  {% if p.doi %} #link("https://doi.org/{{ p.doi }}")[doi:{{ p.doi|t }}]{% elif p.url %} #link("{{ p.url }}")[{{ p.url|t }}]{% endif %}
+
+  {% if p.note %}\ #note[{{ p.note|t }}]{% endif %}
+
 ]
 {% endfor %}
+#sub[Conference papers]
+{% for p in cv.publications.conference %}
+#pub({{ loop.index }})[
+  #strong[{{ p.title|t }}] \
+  {{ p.authors|authors }} ({{ p.year }}). #emph[{{ p.venue|t }}] ({{ p.kind|lower }}).
+]
+{% endfor %}
+#sub[Patents]
+{% for p in cv.publications.patents %}
+#pub({{ loop.index }})[
+  #strong[{{ p.title|t }}] \
+  {{ p.authors|authors }} ({{ p.year }}). {{ p.number|t }} ({{ p.status|lower }}).
+]
+{% endfor %}
+#sub[Software]
+{% for s in cv.software %}
+#pub({{ loop.index }})[#strong[{{ s.name|t }}] — {{ s.description|t }} #link("{{ s.url }}")[{{ s.url|replace("https://","")|t }}]]
+{% endfor %}
 
-#section("Research Funding and Programmes")
+#section("Research Projects and Funding")
 {% for f in cv.funding %}
 #entry("{{ f.years }}")[
   #strong[{{ f.name|t }}] \
-  {% if variant == "full" %}{{ f.description|t }} \
-  {% endif %}
+  {{ f.description|t }} \
   #text(fill: accent)[Role: {{ f.role|t }}]
-  {% if variant == "full" %}
   #bullets({% for b in f.bullets %}[{{ b|t }}],{% endfor %})
-  {% endif %}
 ]
 {% endfor %}
 
-{% if variant == "full" %}
 #section("Supervision")
 #text(weight: "semibold")[{{ cv.supervision.overview|t }}]
 #sub[Co-supervised PhD students]
@@ -119,41 +132,10 @@
 #sub[Supervised undergraduate interns (selected)]
 #note[Common project: #emph[{{ cv.supervision.interns.common_topic|t }}]]
 {% for s in cv.supervision.interns.list %}
-#entry("{{ s.years }}")[#emph[{{ s.name|t }}], {{ s.institution|t }} · {{ s.field|t }} \ #note[Target disease: {{ s.topic|t }}{% if s.note %} · {{ s.note|t }}{% endif %}]]
+#entry("{{ s.years }}")[#emph[{{ s.name|t }}], {{ s.institution|t }} · {{ s.topic|t }}{% if s.note %} · #note[{{ s.note|t }}]{% endif %}]
 {% endfor %}
-{% else %}
-#section("Supervision")
-{{ cv.supervision.overview|t }}
-{% endif %}
-{% endif %}
 
-{% if variant == "short" %}
-#section("Selected Publications")
-{% set sel = cv.publications.journal|selectattr("selected")|list %}
-{{ journal_list(sel) }}
-#note[Full list: #link("https://jspark-bioinfo.github.io/#publications")[jspark\-bioinfo.github.io] · {{ cv.publications.journal|length }} journal articles, {{ cv.publications.conference|length }} conference papers, {{ cv.publications.patents|length }} patent]
-{% else %}
-#section("Research Outputs")
-#sub[Journal articles]
-{{ journal_list(cv.publications.journal) }}
-#sub[Conference papers]
-{% for p in cv.publications.conference %}
-#pub({{ loop.index }})[
-  #strong[{{ p.title|t }}] \
-  {{ p.authors|authors }} ({{ p.year }}). #emph[{{ p.venue|t }}] ({{ p.kind|lower }}).
-]
-{% endfor %}
-#sub[Patents]
-{% for p in cv.publications.patents %}
-#pub({{ loop.index }})[
-  #strong[{{ p.title|t }}] \
-  {{ p.authors|authors }} ({{ p.year }}). {{ p.number|t }} ({{ p.status|lower }}). \
-  #note[{{ p.note|t }}]
-]
-{% endfor %}
-{% endif %}
-
-#section("{% if variant == 'pubs' %}Invited Talks{% else %}Invited Talks{% endif %}")
+#section("Invited Talks")
 {% for k in cv.talks %}
 #entry("{{ k.year }}")[
   #strong[{{ k.title|t }}] \
@@ -161,13 +143,11 @@
 ]
 {% endfor %}
 
-{% if variant != "pubs" %}
 #section("Academic Service")
 {% for s in cv.service %}
 #entry("{{ s.years }}")[
-  #strong[{{ s.name|t }}] — {{ s.role|t }}
-  {% if variant == "full" %}\ #note[{{ s.description|t }}]{% endif %}
-
+  #strong[{{ s.name|t }}] — {{ s.role|t }} \
+  #note[{{ s.description|t }}]
 ]
 {% endfor %}
 
@@ -175,17 +155,11 @@
 {% for s in cv.affiliations %}
 #entry("{{ s.years }}")[
   #strong[{{ s.name|t }}] — {{ s.role|t }}
-  {% if variant == "full" %}\ #note[{{ s.description|t }}]{% endif %}
-
 ]
 {% endfor %}
 
-#section("{% if variant == 'full' %}Awards and Scholarships{% else %}Awards · Languages{% endif %}")
+#section("Awards and Languages")
 {% for a in cv.awards %}
 #entry("{{ a.years }}")[{{ a.name|t }}]
 {% endfor %}
-{% if variant == "full" %}
-#section("Languages")
-{% endif %}
 #entry("")[{% for l in cv.languages %}{{ l.name|t }} ({{ l.level|lower|t }}){% if not loop.last %} · {% endif %}{% endfor %}]
-{% endif %}

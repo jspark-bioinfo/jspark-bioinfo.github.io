@@ -65,6 +65,9 @@ h3{font:600 15px var(--sans);margin:26px 0 10px;color:var(--ink)}
 .item .s{color:var(--muted);font-size:14.5px}
 .item ul{margin:8px 0 0;padding-left:18px;font-size:14.5px}
 .item li{margin:3px 0}
+.links a{font-size:12.5px;margin-left:10px}
+.tag.strong{background:var(--accent);color:#fff}
+@media (prefers-color-scheme:dark){.tag.strong{color:#0f1a19}}
 .tag{display:inline-block;font-size:11.5px;font-weight:500;padding:1px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin-left:6px;vertical-align:2px}
 .pubs{list-style:none;margin:0;padding:0;counter-reset:p}
 .pubs li{position:relative;padding:12px 0 12px 44px;border-bottom:1px solid var(--line)}
@@ -102,25 +105,23 @@ footer{color:var(--muted);font-size:13px;padding-top:24px;border-top:1px solid v
   <h1>{{ cv.name }}</h1>
   <p class="role">{{ cv.title }}<br>{{ cv.affiliation }}</p>
   <ul class="contact">
-    <li><a href="mailto:{{ cv.email }}">{{ cv.email }}</a></li>
+    {% set u, d = cv.email.split("@") %}<li><a class="em" data-u="{{ u|reverse }}" data-d="{{ d|reverse }}" href="#">{{ u }} [at] {{ d }}</a></li>
     {% for l in cv.links %}<li><a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }} ↗</a></li>{% endfor %}
   </ul>
   <nav id="toc">
     <a href="#about">About</a>
     <a href="#news">News</a>
     <a href="#publications">Publications</a>
-    <a href="#talks">Talks</a>
-    <a href="#experience">Experience</a>
-    <a href="#funding">Funding</a>
-    <a href="#supervision">Supervision</a>
-    <a href="#service">Service</a>
+    <a href="#experience">Employment</a>
     <a href="#education">Education</a>
+    <a href="#funding">Projects &amp; Funding</a>
+    <a href="#supervision">Supervision</a>
+    <a href="#talks">Talks</a>
+    <a href="#service">Service</a>
   </nav>
   <div class="dl">
     <h4>Download CV</h4>
     <a class="primary" href="cv/Jaesub_Park_CV.pdf" download>Full CV <span>PDF</span></a>
-    <a href="cv/Jaesub_Park_CV_short.pdf" download>2-page summary <span>PDF</span></a>
-    <a href="cv/Jaesub_Park_Publications.pdf" download>Publications &amp; talks <span>PDF</span></a>
   </div>
 </aside>
 
@@ -133,7 +134,7 @@ footer{color:var(--muted);font-size:13px;padding-top:24px;border-top:1px solid v
     <div class="stat"><b>{{ cv.publications.journal|length }}</b><span>Journal articles</span></div>
     <div class="stat"><b>{{ n_first }}</b><span>First / co-first</span></div>
     <div class="stat"><b>{{ cv.supervision.phd|length + cv.supervision.masters|length }}</b><span>Graduate students supervised</span></div>
-    <div class="stat"><b>{{ cv.funding|length }}</b><span>Funded programmes</span></div>
+    <div class="stat"><b>{{ cv.funding|length }}</b><span>Research programmes</span></div>
   </div>
 </section>
 
@@ -151,13 +152,16 @@ footer{color:var(--muted);font-size:13px;padding-top:24px;border-top:1px solid v
     <button data-f="journal">Journal articles</button>
     <button data-f="conference">Conference</button>
     <button data-f="patent">Patents</button>
+    <button data-f="software">Software</button>
   </div>
   <ul class="pubs">
     {% for p in cv.publications.journal %}
     <li data-k="journal"><span class="y">{{ p.year }}</span>
-      <span class="pt">{% if p.url %}<a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</span>
+      {% set href = ("https://doi.org/" ~ p.doi) if p.doi else p.url %}<span class="pt">{% if href %}<a href="{{ href }}" target="_blank" rel="noopener">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</span>
       <span class="pa">{{ p.authors|authors }}</span><br>
-      <span class="pv">{{ p.venue }}</span>{% if p.cofirst %}<span class="tag">co-first</span>{% endif %}{% if p.status == "preprint" %}<span class="tag">preprint</span>{% endif %}
+      <span class="pv">{{ p.venue }}</span>{% if p is first_author %}<span class="tag strong">first author</span>{% endif %}{% if p.cofirst %}<span class="tag strong">co-first</span>{% endif %}{% if p.type == "review" %}<span class="tag">review</span>{% endif %}{% if p.status == "preprint" %}<span class="tag">preprint</span>{% endif %}
+      <span class="links">{% if p.doi %}<a href="https://doi.org/{{ p.doi }}" target="_blank" rel="noopener">DOI</a>{% endif %}{% if p.url %}<a href="{{ p.url }}" target="_blank" rel="noopener">arXiv</a>{% endif %}{% if p.code %}<a href="{{ p.code }}" target="_blank" rel="noopener">Code</a>{% endif %}</span>
+      {% if p.note %}<div class="pa" style="margin-top:2px">{{ p.note }}</div>{% endif %}
     </li>
     {% endfor %}
     {% for p in cv.publications.conference %}
@@ -174,21 +178,23 @@ footer{color:var(--muted);font-size:13px;padding-top:24px;border-top:1px solid v
       <span class="pv">{{ p.number }}</span><span class="tag">{{ p.status|lower }} patent</span>
     </li>
     {% endfor %}
+    {% for w in cv.software %}
+    <li data-k="software"><span class="y">code</span>
+      <span class="pt"><a href="{{ w.url }}" target="_blank" rel="noopener">{{ w.name }}</a></span>
+      <span class="pa">{{ w.description }}</span>
+    </li>
+    {% endfor %}
   </ul>
 </section>
 
-<section id="talks">
-  <h2>Invited Talks</h2>
-  {% for k in cv.talks %}
-  <div class="item"><div class="when">{{ k.date }}</div><div>
-    <div class="t">{{ k.title }}</div>
-    <div class="s">{{ k.role }} · {{ k.event }}<br>{{ k.place }}</div>
-  </div></div>
-  {% endfor %}
-</section>
+
+
+
+
+
 
 <section id="experience">
-  <h2>Academic Experience</h2>
+  <h2>Employment</h2>
   {% for x in cv.experience %}
   <div class="item"><div class="when">{{ x.years }}</div><div>
     <div class="t">{{ x.role }} <span style="font-weight:400">· {{ x.org }}</span></div>
@@ -197,9 +203,19 @@ footer{color:var(--muted);font-size:13px;padding-top:24px;border-top:1px solid v
   </div></div>
   {% endfor %}
 </section>
-
+<section id="education">
+  <h2>Education</h2>
+  {% for e in cv.education %}
+  <div class="item"><div class="when">{{ e.years }}</div><div>
+    <div class="t">{{ e.degree }}</div>
+    <div class="s">{{ e.institution }}</div>
+    {% if e.thesis %}<div class="s" style="margin-top:4px">Thesis: <em>{{ e.thesis }}</em> · Advisor: {{ e.advisor }}</div>{% endif %}
+    {% if e.bullets %}<ul>{% for b in e.bullets %}<li>{{ b }}</li>{% endfor %}</ul>{% endif %}
+  </div></div>
+  {% endfor %}
+</section>
 <section id="funding">
-  <h2>Research Funding &amp; Programmes</h2>
+  <h2>Research Projects &amp; Funding</h2>
   {% for f in cv.funding %}
   <div class="item"><div class="when">{{ f.years }}</div><div>
     <div class="t">{{ f.name }}</div>
@@ -209,7 +225,6 @@ footer{color:var(--muted);font-size:13px;padding-top:24px;border-top:1px solid v
   </div></div>
   {% endfor %}
 </section>
-
 <section id="supervision">
   <h2>Supervision</h2>
   <p style="margin:0 0 4px">{{ cv.supervision.overview }}</p>
@@ -224,10 +239,18 @@ footer{color:var(--muted);font-size:13px;padding-top:24px;border-top:1px solid v
   <h3>Undergraduate interns (selected)</h3>
   <p class="s" style="color:var(--muted);font-size:14.5px;margin:0 0 4px">Common project: <em>{{ cv.supervision.interns.common_topic }}</em></p>
   {% for s in cv.supervision.interns.list %}
-  <div class="item"><div class="when">{{ s.years }}</div><div><div class="t">{{ s.name }} <span style="font-weight:400" class="s">· {{ s.institution }} · {{ s.field }}</span>{% if s.note %}<span class="tag">{{ s.note }}</span>{% endif %}</div><div class="s">Target disease: {{ s.topic }}</div></div></div>
+  <div class="item"><div class="when">{{ s.years }}</div><div><div class="t">{{ s.name }} <span style="font-weight:400" class="s">· {{ s.institution }} · {{ s.topic }}</span>{% if s.note %}<span class="tag">{{ s.note }}</span>{% endif %}</div></div></div>
   {% endfor %}
 </section>
-
+<section id="talks">
+  <h2>Invited Talks</h2>
+  {% for k in cv.talks %}
+  <div class="item"><div class="when">{{ k.date }}</div><div>
+    <div class="t">{{ k.title }}</div>
+    <div class="s">{{ k.role }} · {{ k.event }}<br>{{ k.place }}</div>
+  </div></div>
+  {% endfor %}
+</section>
 <section id="service">
   <h2>Academic Service &amp; Affiliations</h2>
   {% for s in cv.service + cv.affiliations %}
@@ -237,17 +260,8 @@ footer{color:var(--muted);font-size:13px;padding-top:24px;border-top:1px solid v
   </div></div>
   {% endfor %}
 </section>
-
-<section id="education">
-  <h2>Education</h2>
-  {% for e in cv.education %}
-  <div class="item"><div class="when">{{ e.years }}</div><div>
-    <div class="t">{{ e.degree }}</div>
-    <div class="s">{{ e.institution }}</div>
-    {% if e.thesis %}<div class="s" style="margin-top:4px">Thesis: <em>{{ e.thesis }}</em> · Advisor: {{ e.advisor }}</div>{% endif %}
-  </div></div>
-  {% endfor %}
-  <h3>Awards &amp; Languages</h3>
+<section id="awards">
+  <h2>Awards &amp; Languages</h2>
   {% for a in cv.awards %}<div class="item"><div class="when">{{ a.years }}</div><div>{{ a.name }}</div></div>{% endfor %}
   <div class="item"><div class="when">Languages</div><div>{% for l in cv.languages %}{{ l.name }} <span class="s">({{ l.level|lower }})</span>{% if not loop.last %} · {% endif %}{% endfor %}</div></div>
 </section>
@@ -260,6 +274,7 @@ document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{
   document.querySelectorAll('.filters button').forEach(x=>x.classList.toggle('on',x===b));
   document.querySelectorAll('.pubs li').forEach(li=>li.style.display=(b.dataset.f==='all'||li.dataset.k===b.dataset.f)?'':'none');
 });
+document.querySelectorAll('a.em').forEach(a=>{const e=[...a.dataset.u].reverse().join('')+'@'+[...a.dataset.d].reverse().join('');a.textContent=e;a.href='mailto:'+e;});
 const links=[...document.querySelectorAll('#toc a')];
 const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-20% 0px -70% 0px'});
 document.querySelectorAll('main section').forEach(s=>obs.observe(s));

@@ -65,6 +65,9 @@ h3{font:600 15px var(--sans);margin:26px 0 10px;color:var(--ink)}
 .item .s{color:var(--muted);font-size:14.5px}
 .item ul{margin:8px 0 0;padding-left:18px;font-size:14.5px}
 .item li{margin:3px 0}
+.links a{font-size:12.5px;margin-left:10px}
+.tag.strong{background:var(--accent);color:#fff}
+@media (prefers-color-scheme:dark){.tag.strong{color:#0f1a19}}
 .tag{display:inline-block;font-size:11.5px;font-weight:500;padding:1px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin-left:6px;vertical-align:2px}
 .pubs{list-style:none;margin:0;padding:0;counter-reset:p}
 .pubs li{position:relative;padding:12px 0 12px 44px;border-bottom:1px solid var(--line)}
@@ -102,37 +105,35 @@ footer{color:var(--muted);font-size:13px;padding-top:24px;border-top:1px solid v
   <h1>Jaesub Park</h1>
   <p class="role">Research Associate<br>Cambridge Stem Cell Institute, University of Cambridge</p>
   <ul class="contact">
-    <li><a href="mailto:jp2079@cam.ac.uk">jp2079@cam.ac.uk</a></li>
+<li><a class="em" data-u="9702pj" data-d="ku.ca.mac" href="#">jp2079 [at] cam.ac.uk</a></li>
 <li><a href="https://scholar.google.com/citations?user=AbDVGHAAAAAJ" target="_blank" rel="noopener">Google Scholar ↗</a></li><li><a href="https://linkedin.com/in/jaesub-park" target="_blank" rel="noopener">LinkedIn ↗</a></li><li><a href="https://github.com/jspark-bioinfo" target="_blank" rel="noopener">GitHub ↗</a></li>  </ul>
   <nav id="toc">
     <a href="#about">About</a>
     <a href="#news">News</a>
     <a href="#publications">Publications</a>
-    <a href="#talks">Talks</a>
-    <a href="#experience">Experience</a>
-    <a href="#funding">Funding</a>
-    <a href="#supervision">Supervision</a>
-    <a href="#service">Service</a>
+    <a href="#experience">Employment</a>
     <a href="#education">Education</a>
+    <a href="#funding">Projects &amp; Funding</a>
+    <a href="#supervision">Supervision</a>
+    <a href="#talks">Talks</a>
+    <a href="#service">Service</a>
   </nav>
   <div class="dl">
     <h4>Download CV</h4>
     <a class="primary" href="cv/Jaesub_Park_CV.pdf" download>Full CV <span>PDF</span></a>
-    <a href="cv/Jaesub_Park_CV_short.pdf" download>2-page summary <span>PDF</span></a>
-    <a href="cv/Jaesub_Park_Publications.pdf" download>Publications &amp; talks <span>PDF</span></a>
   </div>
 </aside>
 
 <main>
 <section id="about" class="about">
   <p class="lead">Computational biologist building network, machine-learning and quantum-walk methods to uncover disease mechanisms and therapeutic targets.</p>
-  <p>I am a computational biologist working on the discovery of disease mechanisms and therapeutic targets by applying and developing state-of-the-art computational methods. That work spans graph embedding, diffusion algorithms and pathway-based approaches over heterogeneous biological networks, together with machine learning and AI methods for biomedical data, extending most recently into quantum and quantum-inspired network analysis. I work with multi-omics data from patient-derived organoids, taking responsibility for preprocessing, standardisation and integration alongside the analytical infrastructure that keeps those datasets reusable. Research-active since 2012 across Korean and UK institutions, I bring hands-on operational experience of large multi-institution research consortia and an active role in supervising and developing early-career researchers.</p>
+  <p>I am a computational biologist who develops network-based methods to uncover disease mechanisms and therapeutic targets. My work spans graph embedding, diffusion and pathway-based analysis of heterogeneous biological networks, machine learning for biomedical data and, most recently, quantum walk-based network algorithms. At the Cambridge Stem Cell Institute I lead the computational analysis of multi-omics data from patient-derived intestinal organoids, from preprocessing and integration to the infrastructure that keeps the datasets reusable. I have coordinated work within a ten-year national research consortium and currently co-supervise three PhD students.</p>
   <div class="chips"><span class="chip">Computational Biology</span><span class="chip">Bioinformatics</span><span class="chip">Systems Biology</span><span class="chip">Drug Development</span><span class="chip">Biomarker Discovery</span><span class="chip">Disease Mechanism Analysis</span><span class="chip">Quantum Algorithms</span><span class="chip">Network Analysis</span><span class="chip">Machine Learning</span><span class="chip">Multi-omics</span></div>
   <div class="stats">
     <div class="stat"><b>8</b><span>Journal articles</span></div>
     <div class="stat"><b>6</b><span>First / co-first</span></div>
     <div class="stat"><b>6</b><span>Graduate students supervised</span></div>
-    <div class="stat"><b>4</b><span>Funded programmes</span></div>
+    <div class="stat"><b>4</b><span>Research programmes</span></div>
   </div>
 </section>
 
@@ -149,40 +150,49 @@ footer{color:var(--muted);font-size:13px;padding-top:24px;border-top:1px solid v
     <button data-f="journal">Journal articles</button>
     <button data-f="conference">Conference</button>
     <button data-f="patent">Patents</button>
+    <button data-f="software">Software</button>
   </div>
   <ul class="pubs">
     <li data-k="journal"><span class="y">2026</span>
-      <span class="pt">Human Milk Oligosaccharides Modulate Inflammatory Responses and Lipid Metabolism in a Human Intestinal Organoid Model</span>
+<span class="pt"><a href="https://doi.org/10.1016/j.clnu.2025.106557" target="_blank" rel="noopener">Human Milk Oligosaccharides Modulate Inflammatory Responses and Lipid Metabolism in a Human Intestinal Organoid Model</a></span>
       <span class="pa">E Slater, <strong class="me">J Park*</strong>, T Dennison, …, K Nayak, M Zilbauer</span><br>
-      <span class="pv">Clinical Nutrition</span><span class="tag">co-first</span>    </li>
+      <span class="pv">Clinical Nutrition</span><span class="tag strong">co-first</span>      <span class="links"><a href="https://doi.org/10.1016/j.clnu.2025.106557" target="_blank" rel="noopener">DOI</a></span>
+    </li>
     <li data-k="journal"><span class="y">2026</span>
-      <span class="pt">Advancing Understanding of Long COVID Pathophysiology Through Quantum Walk-Based Network Analysis</span>
+<span class="pt"><a href="https://doi.org/10.1093/bioadv/vbag050" target="_blank" rel="noopener">Advancing Understanding of Long COVID Pathophysiology Through Quantum Walk-Based Network Analysis</a></span>
       <span class="pa"><strong class="me">J Park</strong>, W Hwang, S Lee, H Lee, M MacMahon, M Zilbauer, N Han</span><br>
-      <span class="pv">Bioinformatics Advances</span>    </li>
+      <span class="pv">Bioinformatics Advances</span><span class="tag strong">first author</span>      <span class="links"><a href="https://doi.org/10.1093/bioadv/vbag050" target="_blank" rel="noopener">DOI</a><a href="https://github.com/Namshik-Han-Lab/QuantumWalk-LongCovid" target="_blank" rel="noopener">Code</a></span>
+    </li>
     <li data-k="journal"><span class="y">2026</span>
-      <span class="pt">Machine learning–driven decoding of maternal immune signatures in repeated pregnancy loss</span>
+<span class="pt"><a href="https://doi.org/10.1371/journal.pcbi.1014806" target="_blank" rel="noopener">Machine learning–driven decoding of maternal immune signatures in repeated pregnancy loss</a></span>
       <span class="pa">TL Ko, <strong class="me">J Park*</strong>, D Leem, J Kim, J Han, JS Park, SK Lee, H Paik</span><br>
-      <span class="pv">PLOS Computational Biology</span><span class="tag">co-first</span>    </li>
+      <span class="pv">PLOS Computational Biology</span><span class="tag strong">co-first</span>      <span class="links"><a href="https://doi.org/10.1371/journal.pcbi.1014806" target="_blank" rel="noopener">DOI</a></span>
+    </li>
     <li data-k="journal"><span class="y">2026</span>
-      <span class="pt"><a href="https://arxiv.org/abs/2609.01951" target="_blank" rel="noopener">Universal scaling and protocol-dependent amplitude in hybrid quantum walks</a></span>
+<span class="pt"><a href="https://arxiv.org/abs/2609.01951" target="_blank" rel="noopener">Universal scaling and protocol-dependent amplitude in hybrid quantum walks</a></span>
       <span class="pa">CH Kim, <strong class="me">J Park*</strong>, N Han</span><br>
-      <span class="pv">arXiv preprint (under review)</span><span class="tag">co-first</span><span class="tag">preprint</span>    </li>
+      <span class="pv">arXiv preprint (under review)</span><span class="tag strong">co-first</span><span class="tag">preprint</span>      <span class="links"><a href="https://arxiv.org/abs/2609.01951" target="_blank" rel="noopener">arXiv</a></span>
+    </li>
     <li data-k="journal"><span class="y">2026</span>
-      <span class="pt">Epigenetic Biomarkers in Inflammatory Bowel Diseases – Computational Challenges and Opportunities</span>
+<span class="pt"><a href="https://doi.org/10.1093/ecco-jcc/jjag022" target="_blank" rel="noopener">Epigenetic Biomarkers in Inflammatory Bowel Diseases – Computational Challenges and Opportunities</a></span>
       <span class="pa">S Lee, <strong class="me">J Park</strong>, H-C Lee, X Xu, E Slater, M Gasparetto, N Han, M Zilbauer</span><br>
-      <span class="pv">Journal of Crohn&#39;s and Colitis</span>    </li>
+      <span class="pv">Journal of Crohn&#39;s and Colitis</span><span class="tag">review</span>      <span class="links"><a href="https://doi.org/10.1093/ecco-jcc/jjag022" target="_blank" rel="noopener">DOI</a></span>
+    </li>
     <li data-k="journal"><span class="y">2023</span>
-      <span class="pt">Large-scale prediction of adverse drug reactions-related proteins with network embedding</span>
+<span class="pt"><a href="https://doi.org/10.1093/bioinformatics/btac843" target="_blank" rel="noopener">Large-scale prediction of adverse drug reactions-related proteins with network embedding</a></span>
       <span class="pa"><strong class="me">J Park</strong>, S Lee, K Kim, J Jung, D Lee</span><br>
-      <span class="pv">Bioinformatics</span>    </li>
+      <span class="pv">Bioinformatics</span><span class="tag strong">first author</span>      <span class="links"><a href="https://doi.org/10.1093/bioinformatics/btac843" target="_blank" rel="noopener">DOI</a><a href="https://github.com/rupinas/LAPINE" target="_blank" rel="noopener">Code</a></span>
+    </li>
     <li data-k="journal"><span class="y">2019</span>
-      <span class="pt">Community assessment to advance computational prediction of cancer drug combinations in a pharmacogenomic screen</span>
+<span class="pt"><a href="https://doi.org/10.1038/s41467-019-09799-2" target="_blank" rel="noopener">Community assessment to advance computational prediction of cancer drug combinations in a pharmacogenomic screen</a></span>
       <span class="pa">M Menden, D Wang, …, AstraZeneca-Sanger Drug Combination DREAM Consortium, …, J Dry, J Saez-Rodriguez</span><br>
-      <span class="pv">Nature Communications</span>    </li>
+      <span class="pv">Nature Communications</span>      <span class="links"><a href="https://doi.org/10.1038/s41467-019-09799-2" target="_blank" rel="noopener">DOI</a></span>
+<div class="pa" style="margin-top:2px">Contributed as a member of the AstraZeneca-Sanger Drug Combination DREAM Consortium.</div>    </li>
     <li data-k="journal"><span class="y">2013</span>
-      <span class="pt">Systematic approach for analyzing drug combination by using target-enzyme distance</span>
+<span class="pt">Systematic approach for analyzing drug combination by using target-enzyme distance</span>
       <span class="pa"><strong class="me">J Park</strong>, S Lee, K Kim, D Lee</span><br>
-      <span class="pv">Interdisciplinary Bio Central</span>    </li>
+      <span class="pv">Interdisciplinary Bio Central</span><span class="tag strong">first author</span>      <span class="links"></span>
+    </li>
     <li data-k="conference"><span class="y">2015</span>
       <span class="pt">Visualization zoomable network for large scale interactome</span>
       <span class="pa"><strong class="me">J Park</strong>, S Lee, D Lee</span><br>
@@ -198,50 +208,55 @@ footer{color:var(--muted);font-size:13px;padding-top:24px;border-top:1px solid v
       <span class="pa"><strong class="me">J Park</strong>, D Lee</span><br>
       <span class="pv">KR 10-1842681-0000</span><span class="tag">registered patent</span>
     </li>
+    <li data-k="software"><span class="y">code</span>
+      <span class="pt"><a href="https://github.com/rupinas/LAPINE" target="_blank" rel="noopener">LAPINE</a></span>
+      <span class="pa">Large-scale prediction of adverse drug reaction-related proteins with network embedding.</span>
+    </li>
+    <li data-k="software"><span class="y">code</span>
+      <span class="pt"><a href="https://github.com/Namshik-Han-Lab/QuantumWalk-LongCovid" target="_blank" rel="noopener">QuantumWalk-LongCovid</a></span>
+      <span class="pa">Quantum walk-based network analysis of SARS-CoV-2-induced protein networks (lab repository).</span>
+    </li>
   </ul>
 </section>
 
-<section id="talks">
-  <h2>Invited Talks</h2>
-  <div class="item"><div class="when">6 November 2026</div><div>
-    <div class="t">Quantum walk-based network analysis of Long COVID</div>
-    <div class="s">Invited Speaker · Early-Career Researcher Session, Yonsei Pharmaceutical Bio-Quantum-AI Global Summit 2026<br>Yonsei University International Campus, Songdo, Incheon, Republic of Korea</div>
-  </div></div>
-</section>
+
+
+
+
+
 
 <section id="experience">
-  <h2>Academic Experience</h2>
+  <h2>Employment</h2>
   <div class="item"><div class="when">2024 – present</div><div>
     <div class="t">Research Associate <span style="font-weight:400">· Cambridge Stem Cell Institute, University of Cambridge</span></div>
     <div class="s">Supervisor: Prof. Matthias Zilbauer / Prof. Namshik Han</div>
     <ul><li>Disease epigenetics (Zilbauer): led the computational analysis on the Helmsley-funded study of epigenetic regulation in Crohn&#39;s disease, integrating DNA methylation and transcriptomic data from patient-derived intestinal organoids</li><li>Quantum-inspired network methods (Han): development of quantum walk-based network algorithms for biomedical applications</li></ul>
   </div></div>
   <div class="item"><div class="when">2023</div><div>
-    <div class="t">Postdoctoral Researcher <span style="font-weight:400">· KAIST</span></div>
+    <div class="t">Postdoctoral Researcher <span style="font-weight:400">· Department of Bio and Brain Engineering, KAIST</span></div>
     <div class="s">Supervisor: Prof. Doheon Lee</div>
     <ul><li>Identification of biomarkers for neurodegenerative brain disease</li></ul>
   </div></div>
-  <div class="item"><div class="when">2015 – 2023</div><div>
-    <div class="t">PhD Researcher <span style="font-weight:400">· KAIST</span></div>
-    <div class="s">Supervisor: Prof. Doheon Lee</div>
-    <ul><li>Identification of target proteins related to adverse drug reactions (thesis)</li><li>Development of a system that analyses and visualises large-scale bio-network simulation data</li></ul>
-  </div></div>
-  <div class="item"><div class="when">2013 – 2015</div><div>
-    <div class="t">MS Researcher <span style="font-weight:400">· KAIST</span></div>
-    <div class="s">Supervisor: Prof. Kwang Hyung Lee and Prof. Doheon Lee</div>
-    <ul><li>Effective visualisation of large-scale biological networks (thesis)</li><li>Construction of ontologies for context-specific biological knowledge representation</li></ul>
-  </div></div>
-  <div class="item"><div class="when">2012</div><div>
-    <div class="t">Undergraduate Research Assistant <span style="font-weight:400">· KAIST</span></div>
-    <div class="s">Supervisor: Prof. Doheon Lee</div>
-    <ul><li>Prediction of drug combinations based on protein-protein interaction networks</li></ul>
-  </div></div>
 </section>
-
+<section id="education">
+  <h2>Education</h2>
+  <div class="item"><div class="when">2015 – 2023</div><div>
+    <div class="t">Ph.D. in Bio and Brain Engineering</div>
+    <div class="s">KAIST, Daejeon, Republic of Korea</div>
+<div class="s" style="margin-top:4px">Thesis: <em>Prediction of Adverse Drug Reaction-Related Proteins Using Large-Scale Biological Network Embedding</em> · Advisor: Prof. Doheon Lee</div><ul><li>Developed LAPINE, a network-embedding method for large-scale prediction of ADR-related proteins (Bioinformatics, 2023)</li><li>Built a system to analyse and visualise large-scale bio-network simulation data</li></ul>  </div></div>
+  <div class="item"><div class="when">2013 – 2015</div><div>
+    <div class="t">M.S. in Bio and Brain Engineering</div>
+    <div class="s">KAIST, Daejeon, Republic of Korea</div>
+<div class="s" style="margin-top:4px">Thesis: <em>Design of a multi-scale whole body visualization system</em> · Advisor: Prof. Kwang Hyung Lee and Prof. Doheon Lee</div><ul><li>Zoomable visualisation of large-scale biological networks, leading to a registered Korean patent (2018)</li><li>Built ontologies for context-specific biological knowledge representation</li></ul>  </div></div>
+  <div class="item"><div class="when">2008 – 2013</div><div>
+    <div class="t">B.S. in Biological Sciences and Bio and Brain Engineering (double major)</div>
+    <div class="s">KAIST, Daejeon, Republic of Korea</div>
+<ul><li>Undergraduate research (2012, Prof. Doheon Lee): drug-combination prediction from protein-protein interaction networks (Interdisciplinary Bio Central, 2013)</li></ul>  </div></div>
+</section>
 <section id="funding">
-  <h2>Research Funding &amp; Programmes</h2>
+  <h2>Research Projects &amp; Funding</h2>
   <div class="item"><div class="when">2026 – present</div><div>
-    <div class="t">Basic Science Research Program, National Research Foundation of Korea</div>
+    <div class="t">Basic Science Research Program, National Research Foundation of Korea (NRF)</div>
     <div class="s">Discovering the impact of repeated stress and sleep imbalance on brain network reorganisation in young adults. Funded by the Ministry of Science and ICT, Republic of Korea.</div>
     <div style="font-size:14.5px;margin-top:6px"><strong style="color:var(--accent);font-weight:600">Role:</strong> Computational lead</div>
     <ul><li>Grant development: proposed the collaboration and co-developed the funding application with Prof. Jinyong Chung (Dongguk University College of Medicine)</li><li>Computational analysis: led the application of quantum walk-based network methodology to brain activity networks</li></ul>
@@ -262,10 +277,9 @@ footer{color:var(--muted);font-size:13px;padding-top:24px;border-top:1px solid v
     <div class="t">Bio-Synergy Research Center, Bio and Medical Technology Development Program, National Research Foundation of Korea (2022M3A9B6017511)</div>
     <div class="s">Development of Bio-IT convergence technologies for elucidating the mechanisms of action of traditional natural products. Funded by the Ministry of Science and ICT, Republic of Korea. Ten-year national consortium with 20 laboratories across five thematic work packages.</div>
     <div style="font-size:14.5px;margin-top:6px"><strong style="color:var(--accent);font-weight:600">Role:</strong> Working-level coordinator for the computational modelling work package (five laboratories)</div>
-    <ul><li>Research reporting: consolidated the scientific output of the five laboratories into the programme&#39;s annual reports to the NRF; produced outcome presentation material; attended internal review meetings each cycle; contributed to the final closing report</li><li>Budget reporting: compiled each laboratory&#39;s spending summary into the annual return, which under Korean funding rules accounts for expenditure alongside research activity</li><li>Funder liaison: corresponded with the NRF programme officer on procedural questions and submission scheduling; prepared supplementary material required after each annual assessment</li></ul>
+    <ul><li>Reporting: consolidated the scientific output and spending summaries of five laboratories into the programme&#39;s annual reports and returns to the NRF; contributed to the final closing report</li><li>Funder liaison: point of contact with the NRF programme officer; prepared outcome presentations and supplementary material for each annual assessment</li></ul>
   </div></div>
 </section>
-
 <section id="supervision">
   <h2>Supervision</h2>
   <p style="margin:0 0 4px">Co-supervised 3 doctoral students, supervised 3 master&#39;s students and over 10 undergraduate interns.</p>
@@ -279,13 +293,19 @@ footer{color:var(--muted);font-size:13px;padding-top:24px;border-top:1px solid v
   <div class="item"><div class="when">2026 – present</div><div><div class="t">Yibin Chun <span style="font-weight:400" class="s">· University of Cambridge, UK</span></div><div class="s">Investigating the Impact of Alzheimer&#39;s Disease Risk Factors on Glioblastoma</div></div></div>
   <h3>Undergraduate interns (selected)</h3>
   <p class="s" style="color:var(--muted);font-size:14.5px;margin:0 0 4px">Common project: <em>Discovery of Disease-Specific Biomarkers from Public Omics Datasets Using Computational Biology Approaches</em></p>
-  <div class="item"><div class="when">2025</div><div><div class="t">William Stoeber <span style="font-weight:400" class="s">· University of Cambridge, UK · Natural Sciences</span></div><div class="s">Target disease: Inflammatory Bowel Disease</div></div></div>
-  <div class="item"><div class="when">2025</div><div><div class="t">Robert Lively <span style="font-weight:400" class="s">· California Polytechnic State University, USA · Statistics</span></div><div class="s">Target disease: Inflammatory Bowel Disease</div></div></div>
-  <div class="item"><div class="when">2025</div><div><div class="t">Antonio Vidal-Jimenez <span style="font-weight:400" class="s">· University College London, UK · Medical Science</span></div><div class="s">Target disease: Crohn&#39;s Disease</div></div></div>
-  <div class="item"><div class="when">2025</div><div><div class="t">Seongwon Ok <span style="font-weight:400" class="s">· DGIST, Republic of Korea · Biology</span></div><div class="s">Target disease: Ulcerative Colitis</div></div></div>
-  <div class="item"><div class="when">2018</div><div><div class="t">Jaehong Kim <span style="font-weight:400" class="s">· KAIST, Republic of Korea · Bio Engineering</span><span class="tag">Graduated with the Best Thesis Award</span></div><div class="s">Target disease: Crohn&#39;s Disease</div></div></div>
+  <div class="item"><div class="when">2025</div><div><div class="t">William Stoeber <span style="font-weight:400" class="s">· University of Cambridge, UK · Inflammatory Bowel Disease</span></div></div></div>
+  <div class="item"><div class="when">2025</div><div><div class="t">Robert Lively <span style="font-weight:400" class="s">· California Polytechnic State University, USA · Inflammatory Bowel Disease</span></div></div></div>
+  <div class="item"><div class="when">2025</div><div><div class="t">Antonio Vidal-Jimenez <span style="font-weight:400" class="s">· University College London, UK · Crohn&#39;s Disease</span></div></div></div>
+  <div class="item"><div class="when">2025</div><div><div class="t">Seongwon Ok <span style="font-weight:400" class="s">· DGIST, Republic of Korea · Ulcerative Colitis</span></div></div></div>
+  <div class="item"><div class="when">2018</div><div><div class="t">Jaehong Kim <span style="font-weight:400" class="s">· KAIST, Republic of Korea · Crohn&#39;s Disease</span><span class="tag">Graduated with the Best Thesis Award</span></div></div></div>
 </section>
-
+<section id="talks">
+  <h2>Invited Talks</h2>
+  <div class="item"><div class="when">6 November 2026</div><div>
+    <div class="t">Quantum walk-based network analysis of Long COVID</div>
+    <div class="s">Invited Speaker · Early-Career Researcher Session, Yonsei Pharmaceutical Bio-Quantum-AI Global Summit 2026<br>Yonsei University International Campus, Songdo, Incheon, Republic of Korea</div>
+  </div></div>
+</section>
 <section id="service">
   <h2>Academic Service &amp; Affiliations</h2>
   <div class="item"><div class="when">2024 – present</div><div>
@@ -301,22 +321,8 @@ footer{color:var(--muted);font-size:13px;padding-top:24px;border-top:1px solid v
     <div class="s">Affiliated Postdoc — Brings together researchers in machine learning, biomedical science and medicine to pioneer AI technologies through interdisciplinary collaboration.</div>
   </div></div>
 </section>
-
-<section id="education">
-  <h2>Education</h2>
-  <div class="item"><div class="when">2015 – 2023</div><div>
-    <div class="t">Ph.D. in Bio and Brain Engineering</div>
-    <div class="s">KAIST, Daejeon, Republic of Korea</div>
-<div class="s" style="margin-top:4px">Thesis: <em>Prediction of Adverse Drug Reaction-Related Proteins Using Large-Scale Biological Network Embedding</em> · Advisor: Prof. Doheon Lee</div>  </div></div>
-  <div class="item"><div class="when">2013 – 2015</div><div>
-    <div class="t">M.S. in Bio and Brain Engineering</div>
-    <div class="s">KAIST, Daejeon, Republic of Korea</div>
-<div class="s" style="margin-top:4px">Thesis: <em>Design of a multi-scale whole body visualization system</em> · Advisor: Prof. Kwang Hyung Lee</div>  </div></div>
-  <div class="item"><div class="when">2008 – 2013</div><div>
-    <div class="t">B.S. in Biological Sciences and Bio and Brain Engineering (double major)</div>
-    <div class="s">KAIST, Daejeon, Republic of Korea</div>
-  </div></div>
-  <h3>Awards &amp; Languages</h3>
+<section id="awards">
+  <h2>Awards &amp; Languages</h2>
 <div class="item"><div class="when">2008</div><div>National Science and Technology Scholarship</div></div>  <div class="item"><div class="when">Languages</div><div>Korean <span class="s">(native)</span> · English <span class="s">(full professional proficiency)</span></div></div>
 </section>
 
@@ -328,6 +334,7 @@ document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{
   document.querySelectorAll('.filters button').forEach(x=>x.classList.toggle('on',x===b));
   document.querySelectorAll('.pubs li').forEach(li=>li.style.display=(b.dataset.f==='all'||li.dataset.k===b.dataset.f)?'':'none');
 });
+document.querySelectorAll('a.em').forEach(a=>{const e=[...a.dataset.u].reverse().join('')+'@'+[...a.dataset.d].reverse().join('');a.textContent=e;a.href='mailto:'+e;});
 const links=[...document.querySelectorAll('#toc a')];
 const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-20% 0px -70% 0px'});
 document.querySelectorAll('main section').forEach(s=>obs.observe(s));

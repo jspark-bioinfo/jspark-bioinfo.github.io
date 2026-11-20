@@ -2,7 +2,7 @@
 """Build the homepage and CV PDFs from data/cv.yaml.
 
     pip install pyyaml jinja2 typst
-    python build.py            # writes index.html and cv/*.pdf in the repo root
+    python build.py            # writes index.html and cv/Jaesub_Park_CV.pdf in the repo root
 """
 import datetime as dt
 import re
@@ -61,6 +61,7 @@ def make_env(autoescape):
     )
     env.filters["authors"] = html_authors if autoescape else typ_authors
     env.filters["t"] = typ
+    env.tests["first_author"] = lambda p: p["authors"].startswith(ME) and not p.get("cofirst")
     return env
 
 
@@ -73,17 +74,13 @@ def main():
     (ROOT / "index.html").write_text(html, encoding="utf-8")
     print("wrote index.html")
 
-    # CV PDFs
+    # CV PDF
     import typst
 
     out = ROOT / "cv"
     out.mkdir(exist_ok=True)
     env = make_env(False)
-    variants = {
-        "Jaesub_Park_CV.pdf": dict(variant="full"),
-        "Jaesub_Park_CV_short.pdf": dict(variant="short"),
-        "Jaesub_Park_Publications.pdf": dict(variant="pubs"),
-    }
+    variants = {"Jaesub_Park_CV.pdf": dict(variant="full")}
     for fname, extra in variants.items():
         src = env.get_template("cv.typ.j2").render(**ctx, **extra)
         tmp = out / (fname.replace(".pdf", ".typ"))
