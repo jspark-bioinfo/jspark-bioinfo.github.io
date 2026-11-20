@@ -20,22 +20,26 @@ tagline: >-
   advantage in drug discovery.
 
 profile: >-
-  I am a computational biologist who builds methods rather than borrowing them.
-  Over the past decade I have turned network biology into new algorithms for
-  predicting drug combinations, mapping adverse drug reactions across the human
-  interactome and decoding disease-specific immune signatures. Nearly every
-  paper I have written introduces a method, not just an application.
+  I develop computational methods for biology rather than only applying them.
+  My work starts from a simple premise: disease arises from perturbations that
+  spread through molecular networks, and the algorithms we use to trace that
+  spread determine what we can discover. This is why nearly all of my
+  publications introduce new methods, spanning network propagation, graph
+  embedding, network visualisation and machine learning, and applied to problems
+  from drug combinations and adverse drug reactions to inflammatory bowel
+  disease and Long COVID.
 
 profile2: >-
-  My aim now is to show that quantum computing can deliver a real advantage in
-  the life sciences, starting with drug discovery. Biological networks are where
-  that advantage is most likely to appear first: they are vast, sparse and
-  dominated by propagation and search problems for which quantum algorithms have
-  known theoretical advantages. My quantum walk methods have already identified
-  disease mechanisms in Long COVID that a classical random walk missed. I am now
+  I now work on bringing quantum algorithms to network biology, and my ambition
+  is to demonstrate quantum advantage in the life sciences, starting with drug
+  discovery. Biological networks are where that advantage is most likely to
+  appear first: they are large, sparse and highly structured, and dominated by
+  propagation and search problems for which quantum algorithms have known
+  theoretical advantages. My first quantum walk methods have already revealed
+  disease mechanisms in Long COVID that classical random walks missed. I am now
   building the theory and the experimental validation, in patient-derived
-  organoids, needed to turn early results like these into a demonstrable quantum
-  advantage in finding new therapeutic targets.
+  organoids, needed to turn results like these into a demonstrable quantum
+  advantage in therapeutic target discovery.
 
 research_fields:
   - Network Biology
