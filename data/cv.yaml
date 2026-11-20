@@ -10,6 +10,7 @@ affiliation: Cambridge Stem Cell Institute, University of Cambridge
 location: Cambridge, United Kingdom
 email: jp2079@cam.ac.uk
 links:
+  - { label: ORCID, url: "https://orcid.org/0000-0002-4905-5980" }
   - { label: Google Scholar, url: "https://scholar.google.com/citations?user=AbDVGHAAAAAJ" }
   - { label: LinkedIn, url: "https://linkedin.com/in/jaesub-park" }
   - { label: GitHub, url: "https://github.com/jspark-bioinfo" }
