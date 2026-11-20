@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ cv.name }} — Computational Biology</title>
+<meta name="description" content="{{ cv.tagline }}">
+<meta property="og:title" content="{{ cv.name }}">
+<meta property="og:description" content="{{ cv.tagline }}">
+<meta property="og:type" content="profile">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f5f5b'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='white' text-anchor='middle'%3EJP%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#fbfaf7; --surface:#ffffff; --ink:#1c2126; --muted:#5d6670; --line:#e6e2da;
+  --accent:#1f5f5b; --accent-soft:#e3efed; --serif:"Source Serif 4",Georgia,serif;
+  --sans:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#121517;--surface:#181c1f;--ink:#e7e9ea;--muted:#9aa3ab;--line:#2a3034;--accent:#7cc2b9;--accent-soft:#1d2d2b}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px;display:grid;grid-template-columns:280px 1fr;gap:64px}
+aside{position:sticky;top:0;align-self:start;height:100vh;padding:56px 0 32px;display:flex;flex-direction:column}
+.mono{width:64px;height:64px;border-radius:16px;background:var(--accent);color:#fff;display:grid;place-items:center;font:600 24px var(--serif);margin-bottom:22px}
+@media (prefers-color-scheme:dark){.mono{color:#0f1a19}}
+h1{font:600 30px/1.15 var(--serif);margin:0 0 6px;letter-spacing:-.01em}
+.role{color:var(--muted);font-size:14.5px;line-height:1.5;margin:0 0 20px}
+.contact{list-style:none;margin:0 0 24px;padding:0;font-size:14px}
+.contact li{margin:3px 0}
+nav{display:flex;flex-direction:column;gap:2px;font-size:14px;margin-bottom:auto;border-left:1px solid var(--line)}
+nav a{color:var(--muted);padding:3px 0 3px 14px;margin-left:-1px;border-left:2px solid transparent}
+nav a:hover{color:var(--ink);text-decoration:none}
+nav a.on{color:var(--accent);border-left-color:var(--accent)}
+.dl{margin-top:24px;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.dl h4{margin:0 0 10px;font:600 12px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.dl a{display:flex;justify-content:space-between;align-items:center;padding:7px 10px;border-radius:8px;font-size:14px;color:var(--ink)}
+.dl a:hover{background:var(--accent-soft);text-decoration:none}
+.dl a span{font-size:12px;color:var(--muted)}
+.dl a.primary{background:var(--accent);color:#fff;margin-bottom:4px}
+.dl a.primary span{color:rgba(255,255,255,.75)}
+@media (prefers-color-scheme:dark){.dl a.primary{color:#0f1a19}.dl a.primary span{color:rgba(0,0,0,.6)}}
+main{padding:56px 0 80px;min-width:0}
+section{padding:8px 0 36px}
+h2{font:600 13px var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:0 0 18px;display:flex;align-items:center;gap:14px}
+h2::after{content:"";flex:1;height:1px;background:var(--line)}
+h3{font:600 15px var(--sans);margin:26px 0 10px;color:var(--ink)}
+.lead{font:400 21px/1.55 var(--serif);margin:0 0 18px;color:var(--ink)}
+.about p{margin:0 0 14px;color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.chip{font-size:13px;padding:4px 11px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+.news{list-style:none;margin:0;padding:0}
+.news li{display:grid;grid-template-columns:96px 1fr;gap:16px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+.news time{color:var(--muted);font-size:13.5px;font-variant-numeric:tabular-nums}
+.item{display:grid;grid-template-columns:118px 1fr;gap:20px;padding:14px 0;border-bottom:1px solid var(--line)}
+.item:last-child{border-bottom:0}
+.when{color:var(--muted);font-size:13.5px;font-variant-numeric:tabular-nums;padding-top:2px}
+.item .t{font-weight:600}
+.item .s{color:var(--muted);font-size:14.5px}
+.item ul{margin:8px 0 0;padding-left:18px;font-size:14.5px}
+.item li{margin:3px 0}
+.tag{display:inline-block;font-size:11.5px;font-weight:500;padding:1px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin-left:6px;vertical-align:2px}
+.pubs{list-style:none;margin:0;padding:0;counter-reset:p}
+.pubs li{position:relative;padding:12px 0 12px 44px;border-bottom:1px solid var(--line)}
+.pubs li:last-child{border-bottom:0}
+.pubs .y{position:absolute;left:0;top:14px;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.pubs .pt{font:600 16.5px/1.4 var(--serif);display:block;margin-bottom:3px}
+.pubs .pa{font-size:14px;color:var(--muted)}
+.pubs .pa .me{color:var(--ink);font-weight:600}
+.pubs .pv{font-size:14px;font-style:italic}
+.filters{display:flex;gap:6px;margin:-4px 0 10px;flex-wrap:wrap}
+.filters button{font:500 13px var(--sans);border:1px solid var(--line);background:var(--surface);color:var(--muted);padding:5px 12px;border-radius:999px;cursor:pointer}
+.filters button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+@media (prefers-color-scheme:dark){.filters button.on{color:#0f1a19}}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0 4px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.stat b{display:block;font:600 26px/1.1 var(--serif);color:var(--accent)}
+.stat span{font-size:12.5px;color:var(--muted)}
+footer{color:var(--muted);font-size:13px;padding-top:24px;border-top:1px solid var(--line)}
+@media (max-width:880px){
+  .wrap{grid-template-columns:1fr;gap:0}
+  aside{position:static;height:auto;padding:40px 0 8px}
+  nav{display:none}
+  main{padding-top:24px}
+  .item{grid-template-columns:1fr;gap:2px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .news li{grid-template-columns:1fr;gap:0}
+}
+@media print{aside .dl,nav,.filters{display:none}.wrap{display:block}aside{position:static;height:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<aside>
+  <div class="mono">JP</div>
+  <h1>{{ cv.name }}</h1>
+  <p class="role">{{ cv.title }}<br>{{ cv.affiliation }}</p>
+  <ul class="contact">
+    <li><a href="mailto:{{ cv.email }}">{{ cv.email }}</a></li>
+    {% for l in cv.links %}<li><a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }} ↗</a></li>{% endfor %}
+  </ul>
+  <nav id="toc">
+    <a href="#about">About</a>
+    <a href="#news">News</a>
+    <a href="#publications">Publications</a>
+    <a href="#talks">Talks</a>
+    <a href="#experience">Experience</a>
+    <a href="#funding">Funding</a>
+    <a href="#supervision">Supervision</a>
+    <a href="#service">Service</a>
+    <a href="#education">Education</a>
+  </nav>
+  <div class="dl">
+    <h4>Download CV</h4>
+    <a class="primary" href="cv/Jaesub_Park_CV.pdf" download>Full CV <span>PDF</span></a>
+    <a href="cv/Jaesub_Park_CV_short.pdf" download>2-page summary <span>PDF</span></a>
+    <a href="cv/Jaesub_Park_Publications.pdf" download>Publications &amp; talks <span>PDF</span></a>
+  </div>
+</aside>
+
+<main>
+<section id="about" class="about">
+  <p class="lead">{{ cv.tagline }}</p>
+  <p>{{ cv.profile }}</p>
+  <div class="chips">{% for f in cv.research_fields %}{% for k in f.split(", ") %}<span class="chip">{{ k }}</span>{% endfor %}{% endfor %}</div>
+  <div class="stats">
+    <div class="stat"><b>{{ cv.publications.journal|length }}</b><span>Journal articles</span></div>
+    <div class="stat"><b>{{ n_first }}</b><span>First / co-first</span></div>
+    <div class="stat"><b>{{ cv.supervision.phd|length + cv.supervision.masters|length }}</b><span>Graduate students supervised</span></div>
+    <div class="stat"><b>{{ cv.funding|length }}</b><span>Funded programmes</span></div>
+  </div>
+</section>
+
+<section id="news">
+  <h2>News</h2>
+  <ul class="news">
+    {% for n in cv.news %}<li><time datetime="{{ n.date }}">{{ n.date.strftime("%b %Y") }}</time><span>{{ n.text }}</span></li>{% endfor %}
+  </ul>
+</section>
+
+<section id="publications">
+  <h2>Publications</h2>
+  <div class="filters" role="tablist">
+    <button class="on" data-f="all">All</button>
+    <button data-f="journal">Journal articles</button>
+    <button data-f="conference">Conference</button>
+    <button data-f="patent">Patents</button>
+  </div>
+  <ul class="pubs">
+    {% for p in cv.publications.journal %}
+    <li data-k="journal"><span class="y">{{ p.year }}</span>
+      <span class="pt">{% if p.url %}<a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</span>
+      <span class="pa">{{ p.authors|authors }}</span><br>
+      <span class="pv">{{ p.venue }}</span>{% if p.cofirst %}<span class="tag">co-first</span>{% endif %}{% if p.status == "preprint" %}<span class="tag">preprint</span>{% endif %}
+    </li>
+    {% endfor %}
+    {% for p in cv.publications.conference %}
+    <li data-k="conference"><span class="y">{{ p.year }}</span>
+      <span class="pt">{{ p.title }}</span>
+      <span class="pa">{{ p.authors|authors }}</span><br>
+      <span class="pv">{{ p.venue }}</span><span class="tag">{{ p.kind|lower }}</span>
+    </li>
+    {% endfor %}
+    {% for p in cv.publications.patents %}
+    <li data-k="patent"><span class="y">{{ p.year }}</span>
+      <span class="pt">{{ p.title }}</span>
+      <span class="pa">{{ p.authors|authors }}</span><br>
+      <span class="pv">{{ p.number }}</span><span class="tag">{{ p.status|lower }} patent</span>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section id="talks">
+  <h2>Invited Talks</h2>
+  {% for k in cv.talks %}
+  <div class="item"><div class="when">{{ k.date }}</div><div>
+    <div class="t">{{ k.title }}</div>
+    <div class="s">{{ k.role }} · {{ k.event }}<br>{{ k.place }}</div>
+  </div></div>
+  {% endfor %}
+</section>
+
+<section id="experience">
+  <h2>Academic Experience</h2>
+  {% for x in cv.experience %}
+  <div class="item"><div class="when">{{ x.years }}</div><div>
+    <div class="t">{{ x.role }} <span style="font-weight:400">· {{ x.org }}</span></div>
+    <div class="s">Supervisor: {{ x.supervisor }}</div>
+    <ul>{% for b in x.bullets %}<li>{{ b }}</li>{% endfor %}</ul>
+  </div></div>
+  {% endfor %}
+</section>
+
+<section id="funding">
+  <h2>Research Funding &amp; Programmes</h2>
+  {% for f in cv.funding %}
+  <div class="item"><div class="when">{{ f.years }}</div><div>
+    <div class="t">{{ f.name }}</div>
+    <div class="s">{{ f.description }}</div>
+    <div style="font-size:14.5px;margin-top:6px"><strong style="color:var(--accent);font-weight:600">Role:</strong> {{ f.role }}</div>
+    <ul>{% for b in f.bullets %}<li>{{ b }}</li>{% endfor %}</ul>
+  </div></div>
+  {% endfor %}
+</section>
+
+<section id="supervision">
+  <h2>Supervision</h2>
+  <p style="margin:0 0 4px">{{ cv.supervision.overview }}</p>
+  <h3>Co-supervised PhD students</h3>
+  {% for s in cv.supervision.phd %}
+  <div class="item"><div class="when">{{ s.years }}</div><div><div class="t">{{ s.name }} <span style="font-weight:400" class="s">· {{ s.institution }}</span></div><div class="s">{{ s.topic }}</div></div></div>
+  {% endfor %}
+  <h3>Master's students</h3>
+  {% for s in cv.supervision.masters %}
+  <div class="item"><div class="when">{{ s.years }}</div><div><div class="t">{{ s.name }} <span style="font-weight:400" class="s">· {{ s.institution }}</span>{% if s.note %}<span class="tag">{{ s.note }}</span>{% endif %}</div><div class="s">{{ s.topic }}</div></div></div>
+  {% endfor %}
+  <h3>Undergraduate interns (selected)</h3>
+  <p class="s" style="color:var(--muted);font-size:14.5px;margin:0 0 4px">Common project: <em>{{ cv.supervision.interns.common_topic }}</em></p>
+  {% for s in cv.supervision.interns.list %}
+  <div class="item"><div class="when">{{ s.years }}</div><div><div class="t">{{ s.name }} <span style="font-weight:400" class="s">· {{ s.institution }} · {{ s.field }}</span>{% if s.note %}<span class="tag">{{ s.note }}</span>{% endif %}</div><div class="s">Target disease: {{ s.topic }}</div></div></div>
+  {% endfor %}
+</section>
+
+<section id="service">
+  <h2>Academic Service &amp; Affiliations</h2>
+  {% for s in cv.service + cv.affiliations %}
+  <div class="item"><div class="when">{{ s.years }}</div><div>
+    <div class="t">{{ s.name }}</div>
+    <div class="s">{{ s.role }} — {{ s.description }}</div>
+  </div></div>
+  {% endfor %}
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  {% for e in cv.education %}
+  <div class="item"><div class="when">{{ e.years }}</div><div>
+    <div class="t">{{ e.degree }}</div>
+    <div class="s">{{ e.institution }}</div>
+    {% if e.thesis %}<div class="s" style="margin-top:4px">Thesis: <em>{{ e.thesis }}</em> · Advisor: {{ e.advisor }}</div>{% endif %}
+  </div></div>
+  {% endfor %}
+  <h3>Awards &amp; Languages</h3>
+  {% for a in cv.awards %}<div class="item"><div class="when">{{ a.years }}</div><div>{{ a.name }}</div></div>{% endfor %}
+  <div class="item"><div class="when">Languages</div><div>{% for l in cv.languages %}{{ l.name }} <span class="s">({{ l.level|lower }})</span>{% if not loop.last %} · {% endif %}{% endfor %}</div></div>
+</section>
+
+<footer>© {{ year }} {{ cv.name }} · Last updated {{ updated }}</footer>
+</main>
+</div>
+<script>
+document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.filters button').forEach(x=>x.classList.toggle('on',x===b));
+  document.querySelectorAll('.pubs li').forEach(li=>li.style.display=(b.dataset.f==='all'||li.dataset.k===b.dataset.f)?'':'none');
+});
+const links=[...document.querySelectorAll('#toc a')];
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-20% 0px -70% 0px'});
+document.querySelectorAll('main section').forEach(s=>obs.observe(s));
+</script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+# ─────────────────────────────────────────────────────────────
+#  Single source of truth for jspark-bioinfo.github.io and the CV PDFs.
+#  Edit this file, run `python build.py`, and everything regenerates.
+# ─────────────────────────────────────────────────────────────
+
+name: Jaesub Park
+degree: Ph.D.
+title: Research Associate
+affiliation: Cambridge Stem Cell Institute, University of Cambridge
+location: Cambridge, United Kingdom
+email: jp2079@cam.ac.uk
+links:
+  - { label: Google Scholar, url: "https://scholar.google.com/citations?user=AbDVGHAAAAAJ" }
+  - { label: LinkedIn, url: "https://linkedin.com/in/jaesub-park" }
+  - { label: GitHub, url: "https://github.com/jspark-bioinfo" }
+
+tagline: >-
+  Computational biologist building network, machine-learning and quantum-walk
+  methods to uncover disease mechanisms and therapeutic targets.
+
+profile: >-
+  I am a computational biologist working on the discovery of disease mechanisms
+  and therapeutic targets by applying and developing state-of-the-art
+  computational methods. That work spans graph embedding, diffusion algorithms
+  and pathway-based approaches over heterogeneous biological networks, together
+  with machine learning and AI methods for biomedical data, extending most
+  recently into quantum and quantum-inspired network analysis. I work with
+  multi-omics data from patient-derived organoids, taking responsibility for
+  preprocessing, standardisation and integration alongside the analytical
+  infrastructure that keeps those datasets reusable. Research-active since 2012
+  across Korean and UK institutions, I bring hands-on operational experience of
+  large multi-institution research consortia and an active role in supervising
+  and developing early-career researchers.
+
+research_fields:
+  - Computational Biology, Bioinformatics, Systems Biology
+  - Drug Development, Biomarker Discovery, Disease Mechanism Analysis
+  - Quantum Algorithms, Network Analysis, Machine Learning, Multi-omics
+
+# Short items shown at the top of the homepage. Newest first.
+news:
+  - date: 2026-11-06
+    text: >-
+      Invited talk on quantum walk-based network analysis of Long COVID at the
+      Yonsei Pharmaceutical Bio-Quantum-AI Global Summit 2026, Songdo, Korea.
+
+education:
+  - years: 2015 – 2023
+    degree: Ph.D. in Bio and Brain Engineering
+    institution: KAIST, Daejeon, Republic of Korea
+    thesis: Prediction of Adverse Drug Reaction-Related Proteins Using Large-Scale Biological Network Embedding
+    advisor: Prof. Doheon Lee
+  - years: 2013 – 2015
+    degree: M.S. in Bio and Brain Engineering
+    institution: KAIST, Daejeon, Republic of Korea
+    thesis: Design of a multi-scale whole body visualization system
+    advisor: Prof. Kwang Hyung Lee
+  - years: 2008 – 2013
+    degree: B.S. in Biological Sciences and Bio and Brain Engineering (double major)
+    institution: KAIST, Daejeon, Republic of Korea
+
+experience:
+  - years: 2024 – present
+    role: Research Associate
+    org: Cambridge Stem Cell Institute, University of Cambridge
+    supervisor: Prof. Matthias Zilbauer / Prof. Namshik Han
+    bullets:
+      - "Disease epigenetics (Zilbauer): led the computational analysis on the Helmsley-funded study of epigenetic regulation in Crohn's disease, integrating DNA methylation and transcriptomic data from patient-derived intestinal organoids"
+      - "Quantum-inspired network methods (Han): development of quantum walk-based network algorithms for biomedical applications"
+  - years: "2023"
+    role: Postdoctoral Researcher
+    org: KAIST
+    supervisor: Prof. Doheon Lee
+    bullets:
+      - Identification of biomarkers for neurodegenerative brain disease
+  - years: 2015 – 2023
+    role: PhD Researcher
+    org: KAIST
+    supervisor: Prof. Doheon Lee
+    bullets:
+      - Identification of target proteins related to adverse drug reactions (thesis)
+      - Development of a system that analyses and visualises large-scale bio-network simulation data
+  - years: 2013 – 2015
+    role: MS Researcher
+    org: KAIST
+    supervisor: Prof. Kwang Hyung Lee and Prof. Doheon Lee
+    bullets:
+      - Effective visualisation of large-scale biological networks (thesis)
+      - Construction of ontologies for context-specific biological knowledge representation
+  - years: "2012"
+    role: Undergraduate Research Assistant
+    org: KAIST
+    supervisor: Prof. Doheon Lee
+    bullets:
+      - Prediction of drug combinations based on protein-protein interaction networks
+
+funding:
+  - years: 2026 – present
+    name: Basic Science Research Program, National Research Foundation of Korea
+    description: Discovering the impact of repeated stress and sleep imbalance on brain network reorganisation in young adults. Funded by the Ministry of Science and ICT, Republic of Korea.
+    role: Computational lead
+    bullets:
+      - "Grant development: proposed the collaboration and co-developed the funding application with Prof. Jinyong Chung (Dongguk University College of Medicine)"
+      - "Computational analysis: led the application of quantum walk-based network methodology to brain activity networks"
+  - years: 2024 – present
+    name: The Leona M. and Harry B. Helmsley Charitable Trust (G118500)
+    description: Epigenetic regulation of intestinal epithelial MHC class I signalling — a novel mechanism in the pathogenesis of Crohn's disease.
+    role: Computational lead
+    bullets:
+      - "Team: led the computational analysis team (three PhD students) and directed computational analyses across the project"
+      - "Funder liaison: presented research progress directly to funder representatives; incorporated their feedback and responded to requests for further analysis"
+  - years: 2024 – 2025
+    name: Industry-funded collaboration with dsm-firmenich (G116308)
+    description: Assessing potential applications of human milk oligosaccharide ingredients in a human intestinal organoid model.
+    role: Computational lead
+    bullets:
+      - "Analysis: led the computational analysis of the project; co-first author on the resulting publication"
+      - "Partner liaison: direct liaison with the company's scientists; reported progress in joint meetings and gathered partner input"
+  - years: 2013 – 2023
+    name: "Bio-Synergy Research Center, Bio and Medical Technology Development Program, National Research Foundation of Korea (2022M3A9B6017511)"
+    description: Development of Bio-IT convergence technologies for elucidating the mechanisms of action of traditional natural products. Funded by the Ministry of Science and ICT, Republic of Korea. Ten-year national consortium with 20 laboratories across five thematic work packages.
+    role: Working-level coordinator for the computational modelling work package (five laboratories)
+    bullets:
+      - "Research reporting: consolidated the scientific output of the five laboratories into the programme's annual reports to the NRF; produced outcome presentation material; attended internal review meetings each cycle; contributed to the final closing report"
+      - "Budget reporting: compiled each laboratory's spending summary into the annual return, which under Korean funding rules accounts for expenditure alongside research activity"
+      - "Funder liaison: corresponded with the NRF programme officer on procedural questions and submission scheduling; prepared supplementary material required after each annual assessment"
+
+supervision:
+  overview: Co-supervised 3 doctoral students, supervised 3 master's students and over 10 undergraduate interns.
+  phd:
+    - { years: 2024 – present, name: Seokjun Lee, institution: "University of Cambridge, UK", topic: Advancing gene regulatory pathway prediction through integrative modelling of three-dimensional DNA architecture }
+    - { years: 2024 – present, name: HyunChang Lee, institution: "University of Cambridge, UK", topic: Identifying molecular biomarkers of stem-like cancer cell populations in treatment-resistant gastric cancer }
+    - { years: 2024 – present, name: William Xu, institution: "University of Cambridge, UK", topic: "Leveraging large language models to curate and structure sparse, unstandardised large-scale patient data" }
+  masters:
+    - { years: "2025", name: Wong U Sin, institution: "University of Cambridge, UK", note: "Distinction (80%)", topic: "Recapitulation of Developmental and Segmental Methylation Signatures in Intestinal Organoids: A Translational Platform for Paediatric IBD" }
+    - { years: 2026 – present, name: Kriszta Jozsa, institution: "University of Cambridge, UK", topic: Quantum Network Analysis-Driven Discovery of Candidate Immunotherapy Targets }
+    - { years: 2026 – present, name: Yibin Chun, institution: "University of Cambridge, UK", topic: "Investigating the Impact of Alzheimer's Disease Risk Factors on Glioblastoma" }
+  interns:
+    common_topic: Discovery of Disease-Specific Biomarkers from Public Omics Datasets Using Computational Biology Approaches
+    list:
+      - { years: "2025", name: William Stoeber, institution: "University of Cambridge, UK", field: Natural Sciences, topic: Inflammatory Bowel Disease }
+      - { years: "2025", name: Robert Lively, institution: "California Polytechnic State University, USA", field: Statistics, topic: Inflammatory Bowel Disease }
+      - { years: "2025", name: Antonio Vidal-Jimenez, institution: "University College London, UK", field: Medical Science, topic: "Crohn's Disease" }
+      - { years: "2025", name: Seongwon Ok, institution: "DGIST, Republic of Korea", field: Biology, topic: Ulcerative Colitis }
+      - { years: "2018", name: Jaehong Kim, institution: "KAIST, Republic of Korea", field: Bio Engineering, topic: "Crohn's Disease", note: Graduated with the Best Thesis Award }
+
+# Author name as it appears in author lists; it is bolded automatically.
+me: J Park
+
+publications:
+  journal:
+    - title: Human Milk Oligosaccharides Modulate Inflammatory Responses and Lipid Metabolism in a Human Intestinal Organoid Model
+      authors: "E Slater, J Park*, T Dennison, …, K Nayak, M Zilbauer"
+      venue: Clinical Nutrition
+      year: 2026
+      cofirst: true
+      selected: true
+    - title: Advancing Understanding of Long COVID Pathophysiology Through Quantum Walk-Based Network Analysis
+      authors: "J Park, W Hwang, S Lee, H Lee, M MacMahon, M Zilbauer, N Han"
+      venue: Bioinformatics Advances
+      year: 2026
+      selected: true
+    - title: Machine learning–driven decoding of maternal immune signatures in repeated pregnancy loss
+      authors: "TL Ko, J Park*, D Leem, J Kim, J Han, JS Park, SK Lee, H Paik"
+      venue: PLOS Computational Biology
+      year: 2026
+      cofirst: true
+      selected: true
+    - title: Universal scaling and protocol-dependent amplitude in hybrid quantum walks
+      authors: "CH Kim, J Park*, N Han"
+      venue: arXiv preprint (under review)
+      year: 2026
+      cofirst: true
+      url: "https://arxiv.org/abs/2609.01951"
+      status: preprint
+      selected: true
+    - title: Epigenetic Biomarkers in Inflammatory Bowel Diseases – Computational Challenges and Opportunities
+      authors: "S Lee, J Park, H-C Lee, X Xu, E Slater, M Gasparetto, N Han, M Zilbauer"
+      venue: Journal of Crohn's and Colitis
+      year: 2026
+    - title: Large-scale prediction of adverse drug reactions-related proteins with network embedding
+      authors: "J Park, S Lee, K Kim, J Jung, D Lee"
+      venue: Bioinformatics
+      year: 2023
+      selected: true
+    - title: Community assessment to advance computational prediction of cancer drug combinations in a pharmacogenomic screen
+      authors: "M Menden, D Wang, …, AstraZeneca-Sanger Drug Combination DREAM Consortium, …, J Dry, J Saez-Rodriguez"
+      venue: Nature Communications
+      year: 2019
+    - title: Systematic approach for analyzing drug combination by using target-enzyme distance
+      authors: "J Park, S Lee, K Kim, D Lee"
+      venue: Interdisciplinary Bio Central
+      year: 2013
+  conference:
+    - title: Visualization zoomable network for large scale interactome
+      authors: "J Park, S Lee, D Lee"
+      venue: "MediVis 2015: 12th International Conference on BioMedical Visualization"
+      year: 2015
+      kind: Poster
+    - title: Visualization of Zoomable Network for Multi-Compounds and Multi-Targets Analysis
+      authors: "J Park, J Kim, J Park, S Bae, H Kim, D Lee"
+      venue: "DTMBIO '14: Proceedings of the ACM 8th International Workshop on Data and Text Mining in Bioinformatics"
+      year: 2014
+      kind: Poster
+  patents:
+    - title: Visualization method and apparatus for large-scale biological network
+      authors: "J Park, D Lee"
+      number: KR 10-1842681-0000
+      status: Registered
+      year: 2018
+      note: Arising from master's research on multi-scale visualisation of biological networks.
+
+talks:
+  - title: Quantum walk-based network analysis of Long COVID
+    role: Invited Speaker
+    event: "Early-Career Researcher Session, Yonsei Pharmaceutical Bio-Quantum-AI Global Summit 2026"
+    place: "Yonsei University International Campus, Songdo, Incheon, Republic of Korea"
+    date: 6 November 2026
+    year: 2026
+
+service:
+  - years: 2024 – present
+    name: Cambridge AI Club for Biomedicine
+    description: A monthly forum connecting the Cambridge biomedical ML and bioinformatics communities to explore shared themes in computational biology and AI.
+    role: Organising Committee
+  - years: 2025 – present
+    name: Cambridge Human Organoid Symposium
+    description: A symposium uniting leading organoid researchers with industry and policy experts to explore future technologies, collaboration and ethical considerations.
+    role: Organising Committee
+
+affiliations:
+  - years: 2024 – present
+    name: Cambridge Centre for AI in Medicine (CCAIM)
+    description: Brings together researchers in machine learning, biomedical science and medicine to pioneer AI technologies through interdisciplinary collaboration.
+    role: Affiliated Postdoc
+
+awards:
+  - { years: "2008", name: National Science and Technology Scholarship }
+
+languages:
+  - { name: Korean, level: Native }
+  - { name: English, level: Full professional proficiency }
